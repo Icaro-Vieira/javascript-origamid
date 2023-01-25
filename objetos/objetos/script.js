@@ -50,5 +50,6 @@ console.log(Object.freeze(configuracao))
 // as propriedades do
 // protótipo de String e Array
 
+// Essas duas funçoes abaixo, ajudam quando vamos trabalhar com alguma biblioteca de terceiros e a documentação não é tão boa.
 console.log(Object.getOwnPropertyNames(String.prototype))
 console.log(Object.getOwnPropertyNames(Array.prototype))
