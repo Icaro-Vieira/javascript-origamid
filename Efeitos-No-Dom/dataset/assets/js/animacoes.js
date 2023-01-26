@@ -1,99 +1,100 @@
 // Navigation of tab on list of image and section description
 function initTabNav() {
-    const tabMenu = document.querySelectorAll(".js-tabmenu li")
-    const tabContent = document.querySelectorAll(".js-tabcontent section")
-    tabContent[0].classList.add("ativo")
+  const tabMenu = document.querySelectorAll("[data-tab='menu'] li");
+  const tabContent = document.querySelectorAll("[data-tab='content'] section");
+  tabContent[0].classList.add("ativo");
 
-    if (tabMenu.length && tabContent.length) {
-        function activeTab(index) {
-            tabContent.forEach((section) => {
-                section.classList.remove("ativo")
-            })
-            tabContent[index].classList.add("ativo")
-        }
-        
-        tabMenu.forEach((itemMenu, index) => {
-            itemMenu.addEventListener("click", () => {
-                activeTab(index)
-            })
-        })
+  if (tabMenu.length && tabContent.length) {
+    function activeTab(index) {
+      tabContent.forEach((section) => {
+        section.classList.remove("ativo");
+      });
+      const direcao = tabContent[index].dataset.anime;
+      tabContent[index].classList.add("ativo", direcao);
     }
+
+    tabMenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener("click", () => {
+        activeTab(index);
+      });
+    });
+  }
 }
-initTabNav()
+initTabNav();
 
 // Accordion List on faq
 function initAccordion() {
-    const accordionList = document.querySelectorAll(".js-accordion dt")
-    const activeClass = "ativo"
-    
-    if (accordionList.length) {
-        accordionList[0].classList.add(activeClass)
-        accordionList[0].nextElementSibling.classList.add(activeClass)
-        
-        function activeAccordion() {
-            this.classList.toggle(activeClass)
-            this.nextElementSibling.classList.toggle(activeClass)
-        }
-        
-        accordionList.forEach((item) => {
-            item.addEventListener("click", activeAccordion)
-        })
+  const accordionList = document.querySelectorAll(
+    "[data-anime='accordion'] dt"
+  );
+  const activeClass = "ativo";
+
+  if (accordionList.length) {
+    accordionList[0].classList.add(activeClass);
+    accordionList[0].nextElementSibling.classList.add(activeClass);
+
+    function activeAccordion() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(activeClass);
     }
+
+    accordionList.forEach((item) => {
+      item.addEventListener("click", activeAccordion);
+    });
+  }
 }
-initAccordion()
+initAccordion();
 
 // Smooth Scroll
 function initScrollSuave() {
-    const linksInternos = document.querySelectorAll(".js-menu a[href^='#']")
-    function scrollToSection(event) {
-        event.preventDefault()
-        const href = event.currentTarget.getAttribute("href")
-        const section = document.querySelector(href)
-        
-        // Forma mais comum de utilizar (Não suportada em alguns navegadores):
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        })
-    
-        // Forma alternativa:    
-        // const topo = section.offsetTop
-    
-        // window.scrollTo({
-        //     top: topo,
-        //     behavior: "smooth"
-        // })
-    }
-    
-    linksInternos.forEach((link) => {
-        link.addEventListener("click", scrollToSection)
-    })
-}
-initScrollSuave()
+  const linksInternos = document.querySelectorAll(
+    "[data-menu='suave'] a[href^='#']"
+  );
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
 
+    // Forma mais comum de utilizar (Não suportada em alguns navegadores):
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // Forma alternativa:
+    // const topo = section.offsetTop
+
+    // window.scrollTo({
+    //     top: topo,
+    //     behavior: "smooth"
+    // })
+  }
+
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+initScrollSuave();
 
 function initAnimationScroll() {
-    const sections = document.querySelectorAll(".js-scroll")
-    
-    if (sections.length) {
-        const windowMetade = window.innerHeight * 0.6
-        
-        function animateScroll() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top
-                const isSectionVisible = (sectionTop - windowMetade) < 0
-                
-                if (isSectionVisible)
-                    section.classList.add("ativo")
-                // Para remover ao subir o scroll
-                else 
-                    section.classList.remove("ativo")
-        
-            })
-        }
-        animateScroll()
-    
-        window.addEventListener("scroll", animateScroll)
+  const sections = document.querySelectorAll("[data-anime='scroll']");
+
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.6;
+
+    function animateScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowMetade < 0;
+
+        if (isSectionVisible) section.classList.add("ativo");
+        // Para remover ao subir o scroll
+        else section.classList.remove("ativo");
+      });
     }
+    animateScroll();
+
+    window.addEventListener("scroll", animateScroll);
+  }
 }
-initAnimationScroll()
+initAnimationScroll();

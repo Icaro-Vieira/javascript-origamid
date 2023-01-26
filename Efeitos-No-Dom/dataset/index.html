@@ -9,7 +9,7 @@
     <title>Animais Fantásticos</title>
   </head>
   <body>
-    <nav class="menu js-menu">
+    <nav class="menu" data-menu="suave">
       <ul>
         <li><a href="#animais ">Animais</a></li>
         <li><a href="#faq">Faq</a></li>
@@ -17,9 +17,9 @@
         <li><a href="https://www.origamid.com/">Dev →</a></li>
       </ul>
     </nav>
-    <section class="grid-section animais js-scroll" id="animais">
+    <section class="grid-section animais" id="animais" data-anime="scroll">
       <h1 class="titulo">Animais Fantásticos</h1>
-      <ul class="animais-lista js-tabmenu">
+      <ul class="animais-lista" data-tab="menu">
         <li>
           <img src="img/imagem1.jpg" alt="" />
         </li>
@@ -36,12 +36,12 @@
           <img src="img/imagem5.jpg" alt="" />
         </li>
         <li>
-          <img src="img/imagem6.jpg" alt="" />
+          <img src="img/imagem6.png" alt="" />
         </li>
       </ul>
 
-      <div class="animais-descricao js-tabcontent">
-        <section>
+      <div class="animais-descricao" data-tab="content">
+        <section data-anime="show-right">
           <h2>Raposa</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,7 +65,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Esquilo</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -89,7 +89,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-down">
           <h2>Urso</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -113,7 +113,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-down">
           <h2>Lobo</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -137,7 +137,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Macaco</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -161,7 +161,7 @@
           </p>
         </section>
 
-        <section>
+        <section data-anime="show-right">
           <h2>Leão</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -187,9 +187,9 @@
       </div>
     </section>
 
-    <section class="grid-section faq js-scroll" id="faq">
+    <section class="grid-section faq" id="faq" data-anime="scroll">
       <h1 class="titulo">FAQ</h1>
-      <dl class="faq-lista js-accordion">
+      <dl class="faq-lista" data-anime="accordion">
         <dt>Qual a idade dos animais?</dt>
         <dd>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias
@@ -216,7 +216,7 @@
       </dl>
     </section>
 
-    <section class="grid-section contato js-scroll" id="contato">
+    <section class="grid-section contato" id="contato" data-anime="scroll">
       <h1 class="titulo">Contato</h1>
 
       <div class="mapa">
@@ -235,6 +235,7 @@
       <p>Todos os direitos reservados.</p>
     </footer>
 
+    <script src="assets/js/animacoes.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

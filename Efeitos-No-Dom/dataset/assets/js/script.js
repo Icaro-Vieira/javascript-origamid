@@ -1,99 +1,28 @@
-// Navigation of tab on list of image and section description
-function initTabNav() {
-    const tabMenu = document.querySelectorAll(".js-tabmenu li")
-    const tabContent = document.querySelectorAll(".js-tabcontent section")
-    tabContent[0].classList.add("ativo")
+// const div = document.querySelector("[data-cor]")
+// div.dataset.height = 1000
 
-    if (tabMenu.length && tabContent.length) {
-        function activeTab(index) {
-            tabContent.forEach((section) => {
-                section.classList.remove("ativo")
-            })
-            tabContent[index].classList.add("ativo")
-        }
-        
-        tabMenu.forEach((itemMenu, index) => {
-            itemMenu.addEventListener("click", () => {
-                activeTab(index)
-            })
-        })
-    }
-}
-initTabNav()
+// div.dataset.totalHeight = 2000 // Cria um data atribute em camel case, e no html fica normal data-total-height="2000"
 
-// Accordion List on faq
-function initAccordion() {
-    const accordionList = document.querySelectorAll(".js-accordion dt")
-    const activeClass = "ativo"
-    
-    if (accordionList.length) {
-        accordionList[0].classList.add(activeClass)
-        accordionList[0].nextElementSibling.classList.add(activeClass)
-        
-        function activeAccordion() {
-            this.classList.toggle(activeClass)
-            this.nextElementSibling.classList.toggle(activeClass)
-        }
-        
-        accordionList.forEach((item) => {
-            item.addEventListener("click", activeAccordion)
-        })
-    }
-}
-initAccordion()
+// delete div.dataset.width // Deleta o data atribute
 
-// Smooth Scroll
-function initScrollSuave() {
-    const linksInternos = document.querySelectorAll(".js-menu a[href^='#']")
-    function scrollToSection(event) {
-        event.preventDefault()
-        const href = event.currentTarget.getAttribute("href")
-        const section = document.querySelector(href)
-        
-        // Forma mais comum de utilizar (Não suportada em alguns navegadores):
-        section.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        })
-    
-        // Forma alternativa:    
-        // const topo = section.offsetTop
-    
-        // window.scrollTo({
-        //     top: topo,
-        //     behavior: "smooth"
-        // })
-    }
-    
-    linksInternos.forEach((link) => {
-        link.addEventListener("click", scrollToSection)
-    })
-}
-initScrollSuave()
+// console.log(div.dataset)
 
+// /**
+//  * dataset é uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap. Dentro desse objeto existe uma coleção de chave / valor, com todos os atributos do elemento html que começarem com data-.
+//  */
 
-function initAnimationScroll() {
-    const sections = document.querySelectorAll(".js-scroll")
-    
-    if (sections.length) {
-        const windowMetade = window.innerHeight * 0.6
-        
-        function animateScroll() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top
-                const isSectionVisible = (sectionTop - windowMetade) < 0
-                
-                if (isSectionVisible)
-                    section.classList.add("ativo")
-                // Para remover ao subir o scroll
-                else 
-                    section.classList.remove("ativo")
-        
-            })
-        }
-        animateScroll()
-    
-        window.addEventListener("scroll", animateScroll)
-    }
-}
-initAnimationScroll()
+// ======================= EXERCICIOS ======================= \\
+
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
+
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
+
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
+
+// Substitua todas as classes js- por data atributes.
