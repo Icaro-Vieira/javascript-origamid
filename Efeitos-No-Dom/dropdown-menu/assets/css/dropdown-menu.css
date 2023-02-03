@@ -1,0 +1,19 @@
+[data-dropdown] {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  background-color: #e54;
+  border: 2px solid #333;
+  z-index: 200;
+}
+
+.dropdown-menu::before {
+
+}
+
+.dropdown-menu li a:hover {
+  color: white;
+}
