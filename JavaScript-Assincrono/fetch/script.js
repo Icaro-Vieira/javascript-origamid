@@ -1,45 +1,11 @@
-// const doc = fetch("./doc.txt");
+// Utilizando a API https://viacep.com.br/ws/${CEP}/json/
+// crie um formulário onde o usuário pode digitar o cep
+// e o endereço completo é retornado ao clicar em buscar
 
-// doc
-//   .then(r => r.text())
-//   .then(body => {
-//     const conteudo = document.querySelector(".conteudo");
-//     conteudo.innerText = body;
-//   });
+// Utilizando a API https://blockchain.info/ticker
+// retorne no DOM o valor de compra da bitcoin and reais.
+// atualize este valor a cada 30s
 
-// const cep = fetch("https://viacep.com.br/ws/13603121/json/")
-
-// cep
-// .then(response => response.json())
-// .then((body) => {
-//   console.log(body.cep)
-//   const conteudo = document.querySelector(".conteudo")
-//   conteudo.innerText = body.logradouro
-// })
-
-// const mudandoCor = fetch("./style.css");
-
-// mudandoCor
-//   .then((response) => response.text())
-//   .then((body) => {
-//     const conteudo = document.querySelector(".conteudo");
-//     const style = document.createElement("style");
-//     style.innerHTML = body;
-
-//     conteudo.appendChild(style);
-//   });
-
-const sobre = fetch("./sobre.html");
-
-const div = document.createElement("div")
-
-sobre
-  .then((resposta) => resposta.text())
-  .then((body) => {
-    div.innerHTML = body
-
-    const titulo = div.querySelector("h1")
-    document.querySelector("h1").innerText = titulo.innerText
-    
-    console.log(titulo);
-  });
+// Utilizando a API https://api.chucknorris.io/jokes/random
+// retorne uma piada randomica do chucknorris, toda vez que
+// clicar em próxima
