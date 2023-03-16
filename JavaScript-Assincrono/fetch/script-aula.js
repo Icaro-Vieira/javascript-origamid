@@ -50,7 +50,6 @@
 //   });
 
 // LER UMA IMAGEM E GERAR UM LINK COM O FETCH:
-
 // const imagem = fetch("./imagem.png");
 
 // imagem
