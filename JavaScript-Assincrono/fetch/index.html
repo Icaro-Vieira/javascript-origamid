@@ -10,9 +10,70 @@
     <style>
       label {
         display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
       }
-      input {
+
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+      }
+
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+      }
+
+      span,
+      .chucknorris {
+        color: #f29308;
+      }
+
+      input[type="text"] {
         display: block;
+        outline: none;
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid black;
+        margin-top: 10px;
+      }
+
+      .resultadoCep {
+        margin-top: 5px;
+        font-family: monospace;
+        font-weight: 300;
+      }
+
+      input[type="button"] {
+        border: none;
+        margin-top: 5px;
+        border-radius: 3px;
+        padding: 8px 16px;
+        font-size: 13px;
+        background-color: #ef1a54;
+        color: #fff;
+      }
+
+      button {
+        border: none;
+        margin-top: 3px;
+        border-radius: 3px;
+        padding: 8px 16px;
+        font-size: 13px;
+        background-color: #ef1a54;
+        color: #fff;
+      }
+
+      input[type="button"]:hover,
+      button:hover {
+        filter: brightness(1.2);
+        cursor: pointer;
+      }
+
+      img {
+        margin-top: 3px;
+        height: 350px;
+        width: auto;
       }
     </style>
 
@@ -25,27 +86,30 @@
     <div class="resultadoCep"></div>
 
     <div>
-      <h2>Preço BTC</h2>
-      <p class="btc"></p>
+      <h2>Preço Bitcoin <span>[₿]</span></h2>
+      <p class="btc"><span>R$</span></p>
     </div>
 
     <div>
       <!-- <img src="" alt=""> -->
-      <p class="piada"></p>
+      <p class="piada chucknorris"></p>
       <button class="proxima">Proxima</button>
     </div>
-    
+
     <br />
     <br />
     <br />
-    
+
     <form id="statusHttp">
-      <label for="inputHttp">Digite um status de resposta HTTP (Ex: 202, 404, 200, 503)</label>
-      <input type="text" name="inputHttp" id="inputHttp"/>
+      <label for="inputHttp"
+        >Digite um status de resposta HTTP
+        <span>(Ex: 202, 404, 200, 500)</span></label
+      >
+      <input type="text" name="inputHttp" id="inputHttp" />
       <input type="button" value="Resultado" id="btnStatusHttp" />
     </form>
     <img src="" alt="" />
-    
+
     <script src="script.js"></script>
   </body>
 </html>
