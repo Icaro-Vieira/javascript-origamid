@@ -45,6 +45,7 @@ fetchBtc();
 // clicar em próxima
 const btnProxima = document.querySelector(".proxima");
 const pPiada = document.querySelector(".piada");
+console.log()
 // const imagem = document.querySelector("img");
 
 function puxarPiada() {
