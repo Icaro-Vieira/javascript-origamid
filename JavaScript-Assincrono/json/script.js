@@ -1,7 +1,8 @@
 fetch("./dados.json")
   .then((r) => r.text())
   .then((jsonText) => {
-    const jsonFinal = JSON.parse(jsonText);
+    const jsonFinal = JSON.parse(jsonText); // Transforma uma String que se parece com um JSON e transforma em objeto
+    console.log(jsonFinal)
   });
 
 const configuracoes = {
